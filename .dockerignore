@@ -1,0 +1,49 @@
+# General
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.dbshell
+*.sqlite3
+.env
+.venv
+*.swp
+*~
+.DS_Store
+
+# Git and version control
+.git/
+.gitignore
+
+# Static and media files
+/static/
+/media/
+
+# Local development-specific files
+db.sqlite3
+
+# Docker specific
+Dockerfile
+docker-compose.yml
+
+# IDE specific
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS specific
+Thumbs.db
+Desktop.ini
+
+# Python bytecode
+*.py[cod]
+*$py.class
+
+# pytest
+.cache
+pytest_cache/
+*.egg-info/
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
