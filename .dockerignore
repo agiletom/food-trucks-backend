@@ -17,7 +17,6 @@ __pycache__
 
 # Static and media files
 /static/
-/media/
 
 # Local development-specific files
 db.sqlite3
