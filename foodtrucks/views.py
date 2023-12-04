@@ -5,54 +5,6 @@ from foodtrucks.models import FoodTruck
 import csv
 from math import radians, cos, sin, asin, sqrt
 
-def read_csv():
-  with open("static/food-truck-data.csv") as file:
-    csvreader = csv.reader(file)
-    headers = next(csvreader)  # Skip the header row if your CSV file has headers
-    trucks = []
-
-    for row in csvreader:
-      try:
-        # Convert each field to the appropriate data type
-        truck_data = {
-          'model': 'foodtrucks.FoodTruck',
-          'fields': {
-            'locationId': int(row[0]),
-            'applicant': str(row[1]),
-            'facilityType': str(row[2]),
-            'cnn': int(row[3]),
-            'locationDescription': str(row[4]),
-            'address': str(row[5]),
-            'blocklot': str(row[6]),
-            'block': str(row[7]),
-            'lot': str(row[8]),
-            'permit': str(row[9]),
-            'status': str(row[10]),
-            'foodItems': str(row[11]),
-            'x': float(row[12]),
-            'y': float(row[13]),
-            'latitude': float(row[14]),
-            'longitude': float(row[15]),
-            'schedule': str(row[16]),
-            'dayshours': str(row[17]),
-            'approved': str(row[19]),
-            'received': str(row[20]),
-            'priorPermit': bool(int(row[21])),
-            'expirationDate': datetime.strptime(row[22], "%m/%d/%Y %I:%M:%S %p").strftime("%Y-%m-%d %H:%M:%S"),
-            'location': str(row[23]),
-            'firePreventionDistricts': int(row[24]),
-            'policeDistricts': int(row[25]),
-            'supervisorDistricts': int(row[26]),
-            'zipCodes': int(row[27]),
-            'neighborhoods': int(row[28]),
-          }
-        }
-        trucks.append(truck_data)
-      except ValueError as e:
-        print(f"Error processing row {row}: {e}")
-      
-  return trucks
-
 def haversine(lon1, lat1, lon2, lat2):
   # Convert decimal degrees to radians
   lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
